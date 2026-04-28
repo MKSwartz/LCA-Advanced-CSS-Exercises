@@ -1,0 +1,76 @@
+header {
+  background-color: #2c502d;
+  color: white;
+  padding: 15px 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header p {
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .product-card {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+.product-card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  background-color: white;
+  width: 300px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.cart-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.cart-btn:hover {
+  background-color: #3b8d3f;
+}
