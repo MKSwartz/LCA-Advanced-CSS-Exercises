@@ -1,5 +1,5 @@
 # LCA-Advanced-CSS-Exercises
-**Trainee:** [Your full registered name]
+**Trainee:** Morgen Swartz
 **Programme:** YouthCode Off-Site — Cohort 2, 2026
 **Course:** Course 1 — Frontend Web Development
 **Topic:** Advanced CSS Exercises
