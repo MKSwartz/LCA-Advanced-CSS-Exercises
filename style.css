@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background: #d8c99b;
+  color: #110920;
+}
+
+/* nav bar */
+nav {
+  background: white;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Makeup! logo */
+nav span a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #a4243b, #d8973c);
+  background-clip: text;
+  color: transparent;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+nav span a:hover {
+  transform: scale(1.08) rotate(-1deg);
+}
+
+/* nav menu */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #110920;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #a4243b, #d8973c);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+  border-radius: 2px;
+}
+
+.nav-menu a:hover {
+  color: #a4243b;
+}
+
+.nav-menu a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-menu a.active::after {
+  transform: scaleX(1);
+}
+/* Hero section */
+.hero {
+  background: linear-gradient(135deg, #a4243b, #d8973c, #bd632f);
+  background-size: 200% 200%;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  animation: colorShift 8s ease infinite alternate;
+}
+
+@keyframes colorShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
+  opacity: 0.9;
+}
+
+.hero-btn {
+  background: white;
+  color: #a4243b;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  display: inline-block;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+  color: #d6ad28;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 15px #d6ad28;
+}
+
+/* products section */
+.products {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #110920;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6c757d;
+  margin-bottom: 2.5rem;
+}
+
+/* product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* product cards */
+.card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(168, 36, 59, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 35px rgba(168, 36, 59, 0.15);
+  border-color: rgba(168, 36, 59, 0.2);
+}
+
+.card-img {
+  height: 240px;
+  background: linear-gradient(135deg, #f8f2fd, #fae6e9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #f4e6fa, #e8d6f5);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #110920;
+  font-weight: 600;
+}
+
+.card-desc {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #a4243b;
+  margin-bottom: 1rem;
+}
+
+.card-info {
+  padding: 1.5rem;
+  background: white;
+}
+
+.card-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1.5px solid #a4243b;
+  color: #a4243b;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+}
+
+.card-btn:hover {
+  background: #a4243b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(168, 36, 59, 0.3);
+}
+
+/* Skeleton loading card */
+.skeleton-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.skeleton-img {
+  height: 220px;
+  background: linear-gradient(110deg, #efede9 8%, #faf9f8 18%, #efeee9 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-info {
+  padding: 1.5rem;
+}
+
+.skeleton-line {
+  height: 16px;
+  background: #efeee9;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.skeleton-line.long {
+  width: 100%;
+}
+
+.skeleton-line.medium {
+  width: 70%;
+}
+
+.skeleton-line.short {
+  width: 45%;
+}
+
+.skeleton-line.small {
+  width: 35%;
+  height: 28px;
+  margin-top: 0.5rem;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* responsive sizing */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .nav-menu {
+    gap: 1.2rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .products {
+    padding: 2rem 1rem;
+  }
+}
+
+/* loading dots */
+.loading-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 2rem;
+  margin-top: 1rem;
+  background: #fdf2f3;
+  border-radius: 60px;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dots span {
+  width: 8px;
+  height: 8px;
+  background: #a4243b;
+  border-radius: 50%;
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.1s;
+  background: #d8973c;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.2s;
+  background: #a4243b;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.loading-text {
+  color: #a4243b;
+  font-size: 0.9rem;
+}
+
+/* footer */
+footer {
+  background: #110920;
+  color: #adb5bd;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
